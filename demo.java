@@ -1,10 +1,8 @@
 import java.util.Scanner;
- class student {
+public class student {
     String name;
     int age;
-student(String studentName,int studentAge) {
-        name=studentName;
-        age=studentAge;
+    student(String name,int age) {
 
     }
     void display() {
@@ -12,9 +10,8 @@ student(String studentName,int studentAge) {
         System.out.println(age);
     }
 }
-public class main {
 public static void main(String[] args) {
-    student s=new student("durga",20);
-    s.display();
+    student s=new student();
+    s.display(durga,20);
 }
-}  
+

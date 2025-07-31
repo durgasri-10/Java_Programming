@@ -2,9 +2,9 @@ import java.util.Scanner;
  class student {
     String name;
     int age;
-student(String studentName,int studentAge) {
-        name=studentName;
-        age=studentAge;
+    student(String sname,int sage) {
+        sname=name;
+        sage=age;
 
     }
     void display() {
@@ -14,7 +14,7 @@ student(String studentName,int studentAge) {
 }
 public class main {
 public static void main(String[] args) {
-    student s=new student("durga",20);
+    student s=new student(durga,20);
     s.display();
 }
 }  

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Paragraph Analysis</title>
+  </head>
+  <body>
+    <h2>Enter a Paragraph</h2>
+    <textarea id="para" rows="6" cols="50"></textarea><br /><br />
+    <button onclick="analyzeParagraph()">Analyze</button>
+
+    <h3>Results:</h3>
+    <p id="alphaCount"></p>
+    <p id="vowelCount"></p>
+    <script>
+      function analyzeParagraph() {
+        const text = document.getElementById("para").value;
+        let alphabets = 0;
+        let vowels = 0;
+        const vowelSet = "aeiouAEIOU";
+
+        for (let i = 0; i < text.length; i++) {
+          const char = text[i];
+          if ((char >= "A" && char <= "Z") || (char >= "a" && char <= "z")) {
+            alphabets++;
+            if (vowelSet.includes(char)) {
+              vowels++;
+            }
+          }
+        }
+        
+        document.getElementById("alphaCount").innerText =
+          "Number of Alphabets: " + alphabets;
+        document.getElementById("vowelCount").innerText =
+          "Number of Vowels: " + vowels;
+      }
+    </script>
+  </body>
+</html>

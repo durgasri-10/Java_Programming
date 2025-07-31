@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Remove Max and Min from Array</title>
+  </head>
+  <body style="text-align: center; font-family: Arial; margin-top: 50px">
+    <h2>Remove Max and Min Element from Array</h2>
+
+    <input
+      type="text"
+      id="arrayInput"
+      placeholder="Enter numbers separated by commas"
+    />
+    <br /><br />
+    <button onclick="removeMaxMin()">Remove Max and Min</button>
+
+    <h3>Updated Array:</h3>
+    <p id="result"></p>
+
+    <script>
+      function removeMaxMin() {
+        // Get input and convert to array of numbers
+        let input = document.getElementById("arrayInput").value;
+        let arr = input.split(",").map(Number);
+
+        if (arr.length < 2) {
+          document.getElementById("result").innerText =
+            "Please enter at least 2 numbers.";
+          return;
+        }
+
+        // Find max and min
+        let max = Math.max(...arr);
+        let min = Math.min(...arr);
+
+        // Remove first occurrence of max and min
+        arr.splice(arr.indexOf(max), 1);
+        arr.splice(arr.indexOf(min), 1);
+
+        // Display result
+        document.getElementById("result").innerText = arr.join(", ");
+      }
+    </script>
+  </body>
+</html>
